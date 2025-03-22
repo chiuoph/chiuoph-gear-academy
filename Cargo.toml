@@ -1,0 +1,22 @@
+workspace = { members = ["io"] }
+[package]
+name = "pebbles-game"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pebbles-game-io = { path = "io" }
+gstd = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0", features = ["debug"] }
+
+[build-dependencies]
+pebbles-game-io = { path = "io" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+
+[dev-dependencies]
+pebbles-game-io = { path = "io" }
+gtest = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+
+[lib]
+name = "pebbles_game"
+path = "src/lib.rs"
+crate-type = ["rlib"]
